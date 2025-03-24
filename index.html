@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DungeonDaily - A Daily Roguelike Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>DungeonDaily</h1>
+
+        <div id="message-container" class="">
+          <p id="message">A new dungeon puzzle every day for everyone!</p>
+        </div>
+      </header>
+
+      <div class="game-container">
+        <div class="stats-container">
+          <div class="stat">
+            <span id="health-label">Health:</span>
+            <span id="health-value">3</span>
+          </div>
+          <div class="stat">
+            <span id="moves-label">Moves:</span>
+            <span id="moves-value">0</span>
+          </div>
+          <div class="stat">
+            <span id="score-label">Score:</span>
+            <span id="score-value">0</span>
+          </div>
+        </div>
+
+        <div id="game-board" class="game-board"></div>
+      </div>
+
+      <div id="game-over" class="modal hidden">
+        <div class="modal-content">
+          <h2 id="game-over-title">Game Over</h2>
+          <p id="game-over-message"></p>
+          <div class="stats">
+            <div class="stat">Final Score: <span id="final-score">0</span></div>
+            <div class="stat">Moves: <span id="final-moves">0</span></div>
+          </div>
+          <div class="share-container">
+            <p>Share your results:</p>
+            <button id="share-btn">Share</button>
+            <div id="share-text" class="share-text"></div>
+          </div>
+          <p class="come-back">Come back tomorrow for a new dungeon!</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

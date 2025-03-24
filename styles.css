@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff9f43;
+    margin-bottom: 5px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #16213e;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #364f6b;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 2px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: #253555;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #364f6b;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f3460;
+    border-radius: 3px;
+    aspect-ratio: 1/1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    width: 180px;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    background-color: #16213e;
+    color: #e6e6e6;
+    border: 2px solid #364f6b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    background-color: #364f6b;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+#message {
+    white-space: pre-wrap;
+}
+
+.message-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #16213e;
+    border-radius: 5px;
+    border: 2px solid #364f6b;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Cell types */
+.cell.wall {
+    background-color: #364f6b;
+}
+
+.cell.player {
+    background-color: #ff9f43;
+    color: #1a1a2e;
+}
+
+.cell.enemy {
+    background-color: #e84545;
+    color: #e6e6e6;
+}
+
+.cell.health {
+    background-color: #3cc873;
+    color: #1a1a2e;
+}
+
+.cell.exit {
+    background-color: #3fc1c9;
+    color: #1a1a2e;
+}
+
+.cell.trap {
+    background-color: #fc5185;
+    color: #e6e6e6;
+}
+
+.cell.coin {
+    background-color: #ffd700;
+    color: #1a1a2e;
+}
+
+.cell.explored {
+    background-color: #253555;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #364f6b;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal h2 {
+    color: #ff9f43;
+    margin-bottom: 10px;
+}
+
+.modal .stats {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #253555;
+    border-radius: 5px;
+}
+
+.share-container {
+    margin: 20px 0;
+}
+
+#share-btn {
+    padding: 8px 16px;
+    background-color: #ff9f43;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.share-text {
+    padding: 10px;
+    background-color: #253555;
+    border-radius: 5px;
+    margin-top: 10px;
+    word-break: break-all;
+}
+
+.come-back {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .controls {
+        width: 150px;
+    }
+
+    .control-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
