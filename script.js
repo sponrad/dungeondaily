@@ -626,6 +626,7 @@ document.addEventListener('swipe', (e) => {
 
 // Add keyboard controls
 document.addEventListener('keydown', (e) => {
+    e.preventDefault();
     switch (e.key) {
         case 'ArrowUp':
             movePlayer(0, -1);
