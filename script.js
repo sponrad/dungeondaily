@@ -606,28 +606,40 @@ shareBtn.addEventListener('click', () => {
   navigator.clipboard.writeText(shareText);
 });
 
-// Add event listeners for controls
-// btnUp.addEventListener('click', () => movePlayer(0, -1));
-// btnDown.addEventListener('click', () => movePlayer(0, 1));
-// btnLeft.addEventListener('click', () => movePlayer(-1, 0));
-// btnRight.addEventListener('click', () => movePlayer(1, 0));
+// Add swipe controls
+document.addEventListener('swipe', (e) => {
+    switch (e.detail.direction) {
+        case 'up':
+            movePlayer(0, -1);
+            break;
+        case 'down':
+            movePlayer(0, 1);
+            break;
+        case 'left':
+            movePlayer(-1, 0);
+            break;
+        case 'right':
+            movePlayer(1, 0);
+            break;
+    }
+});
 
 // Add keyboard controls
 document.addEventListener('keydown', (e) => {
-  switch (e.key) {
-    case 'ArrowUp':
-      movePlayer(0, -1);
-      break;
-    case 'ArrowDown':
-      movePlayer(0, 1);
-      break;
-    case 'ArrowLeft':
-      movePlayer(-1, 0);
-      break;
-    case 'ArrowRight':
-      movePlayer(1, 0);
-      break;
-  }
+    switch (e.key) {
+        case 'ArrowUp':
+            movePlayer(0, -1);
+            break;
+        case 'ArrowDown':
+            movePlayer(0, 1);
+            break;
+        case 'ArrowLeft':
+            movePlayer(-1, 0);
+            break;
+        case 'ArrowRight':
+            movePlayer(1, 0);
+            break;
+    }
 });
 
 // Initialize the game when the page loads
